@@ -4,7 +4,6 @@
   box-sizing: border-box;
 }
 
-/*root (raiz), criando uma variavel que vai receber a cor white e adicionar nos lugares do css que precisa da cor white.*/
 :root {
   --text-color: white;
   --bg-url: url(./assets/bg-mobile.jpg);
@@ -15,47 +14,37 @@
   --switch-bg-url: url(./assets/moon-stars.svg);
 }
 
-/*pegenado a class lighty para fazer as alteraçoes*/
 .light {
   --text-color: black;
-  --bg-url: url(./assets/bg-mobile-light.jpg); /*alterando a imagem de fundo*/
-  --switch-bg-url: url(./assets/sun.svg); /*alterando a imagem da lua pro sol*/
-  --stroke-color: rgba(0, 0, 0, 0.5); /*alterando cor da borda*/
+  --bg-url: url(./assets/bg-mobile-light.jpg); 
+  --switch-bg-url: url(./assets/sun.svg); 
+  --stroke-color: rgba(0, 0, 0, 0.5); 
   --surface-color: rgba(
     0,
     0,
     0,
     0.05
-  ); /*alterando cor de fundo do button, deixando embaraçado*/
+  );
   --surface-color-hover: rgba(
     0,
     0,
     0,
     0.02
-  ); /*alterando a cor do fundo quando o mouse estiver em cima*/
+  );
   --highlight-color: rgba(
     0,
     0,
     0,
     0.1
-  ); /*alterando a cor dos ICONES quando passar o mouse por cima*/
+  );
 }
 
 body {
-  /* no backgroud abaixo, esta divido em partes ja no outro esta agrupados todos em um unico background.
-  background-image: url(/assets/bg-mobile.jpg);
-  background-repeat: no-repeat;
-  background-position: top center;
-  background-size: cover;
-  */
-
-  /* agrupar tudo em um unico background: color(nao foi definido), image(url), repeat, position, cover */
   background: var(--bg-url) no-repeat top center/cover;
   height: 100vh;
 }
 
 body * {
-  /*Vai deixar todas as palavras do corpo na cor branca*/
   font-family: "Inter", sans-serif;
   color: var(--text-color);
 }
@@ -70,7 +59,6 @@ body * {
 
 /*Profile*/
 #profile {
-  /* Profile pai, vai centralizar a imagem já que o Profile img, é inline e nao tem como centralizar.*/
   text-align: center;
   padding: 24px;
 }
@@ -90,7 +78,7 @@ body * {
   position: relative;
   width: 64px;
 
-  margin: 4px auto; /*deixando o switch centralizado*/
+  margin: 4px auto;
 }
 
 #switch button {
@@ -100,7 +88,7 @@ body * {
   border: 0;
   border-radius: 50%;
 
-  /*posicionando a ICON lua/sol no meio do track*/
+  /*posicionando sun/moon ao centro do track*/
   position: absolute;
   z-index: 1;
   left: 0;
@@ -119,7 +107,7 @@ body * {
 }
 
 #switch span {
-  display: block; /*por padrao SPAN, tem o display inline e nao aceita algumas propriedas por exemplo (tamanho e largura), ai definimos o display como block*/
+  display: block; 
   width: 64px;
   height: 24px;
   background: var(--surface-color);
@@ -129,7 +117,6 @@ body * {
   border-radius: 9999px;
 }
 
-/*links - UL pai*/
 ul {
   list-style: none;
   display: flex;
@@ -139,45 +126,42 @@ ul {
   padding: 24px 0;
 }
 
-/*Filho do UL*/
-
 ul li a {
-  display: flex; /*cria uma linha imaginaria*/
-  align-items: center; /*deixa o texto na reta dessa linha*/
-  justify-content: center; /*deixa o texto no meio da linha que o flex criou*/
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
-  padding: 16px 24px; /*espaço entre elementos(nome de um link para outro link)*/
+  padding: 16px 24px; 
 
-  background: var(--surface-color); /*cor de fundo do links*/
-  border: 1px solid var(--stroke-color); /*cor da borda do links*/
-  border-radius: 8px; /*aredonda a borda do link*/
+  background: var(--surface-color); 
+  border: 1px solid var(--stroke-color); 
+  border-radius: 8px; 
 
-  backdrop-filter: blur(4px); /*vai colocar um embaçado bem suave na cor*/
+  backdrop-filter: blur(4px); 
   -webkit-backdrop-filter: blur(4px);
 
-  text-decoration: none; /*remove a linha que fica em baixo do texto*/
-  font-weight: 500; /*tamanho da letra*/
+  text-decoration: none; 
+  font-weight: 500; 
 
   transition: background 0.2s;
 }
 
-/* Pseudo-selector (quando passar o mouse por cima do button*/
+/* Pseudo-selector*/
 ul li a:hover {
-  background: var(--surface-color-hover); /*cor de fundo do links*/
-  border: 1.5px solid var(--text-color); /*cor da borda do links*/
+  background: var(--surface-color-hover); 
+  border: 1.5px solid var(--text-color); 
 }
 
-/*social-links icones*/
+/*social-links*/
 #social-links {
   display: flex;
   justify-content: center;
 
   padding: 24px 0;
 
-  font-size: 24px; /*Quando determina um tamanho do font-size, tudo que tiver dentro do social links receberar esse tamanho*/
+  font-size: 24px; 
 }
 
-/*Deixando o ICON alinhado com circulo cinza que fica ao redor quando passa o mouse em cima*/
 #social-links a {
   display: flex;
   align-items: center;
@@ -188,7 +172,6 @@ ul li a:hover {
   border-radius: 50%;
 }
 
-/*add cor ao redor do ICON quando passar o mouse em cima*/
 #social-links a:hover {
   background: var(--highlight-color);
 }
@@ -199,7 +182,6 @@ footer {
   font-size: 14px;
 }
 
-/*media queries - alterar a imagem conforme o tamanho do dispositivo*/
 @media (min-width: 700px) {
   :root {
     --bg-url: url(./assets/bg-desktop.jpg);
@@ -210,7 +192,6 @@ footer {
   }
 }
 
-/* animation para mover o button soavemente */
 @keyframes slide-in {
   from {
     left: 0;
